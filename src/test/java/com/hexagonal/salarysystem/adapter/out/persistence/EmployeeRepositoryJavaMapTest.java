@@ -20,7 +20,7 @@ class EmployeeRepositoryJavaMapTest {
         EmployeeRepositoryJavaMap employeeRepository = new EmployeeRepositoryJavaMap(employeeMap);
 
         // 테스트 수행
-        Optional<EmployeeInfoMapEntity> result = employeeRepository.findEmployeeInfoById(1L);
+        Optional<ConvertableToEmployeeInfo> result = employeeRepository.findEmployeeInfoById(1L);
 
         // 결과 검증
         assertTrue(result.isPresent());
@@ -33,7 +33,7 @@ class EmployeeRepositoryJavaMapTest {
         EmployeeRepositoryJavaMap employeeRepository = new EmployeeRepositoryJavaMap(employeeMap);
 
         // 테스트 수행
-        Optional<EmployeeInfoMapEntity> result = employeeRepository.findEmployeeInfoById(2L);
+        Optional<ConvertableToEmployeeInfo> result = employeeRepository.findEmployeeInfoById(2L);
 
         // 결과 검증
         assertTrue(result.isEmpty(), "존재하지 않는 ID에 대한 조회는 빈 Optional을 반환해야 합니다.");
