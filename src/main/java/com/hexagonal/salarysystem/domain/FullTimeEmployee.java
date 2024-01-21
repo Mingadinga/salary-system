@@ -11,7 +11,7 @@ public class FullTimeEmployee extends Employee {
     }
 
     @Override
-    Money calculateSalary() {
+    public Money calculateSalary() {
         return basePay.multiply(1 - taxRate);
     }
 }

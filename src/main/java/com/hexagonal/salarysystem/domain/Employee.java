@@ -5,6 +5,6 @@ public abstract class Employee {
     Long id;
     String name;
 
-    abstract Money calculateSalary();
+    public abstract Money calculateSalary();
 
 }

@@ -12,7 +12,7 @@ public class PartTimeEmployee extends Employee {
     }
 
     @Override
-    Money calculateSalary() {
+    public Money calculateSalary() {
         Money basePay = basePayOfTime.multiply(workTime.toHour());
         return basePay.multiply(1 - taxRate);
     }
