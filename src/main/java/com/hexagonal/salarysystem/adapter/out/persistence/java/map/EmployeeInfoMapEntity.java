@@ -31,4 +31,8 @@ public class EmployeeInfoMapEntity implements ConvertableToEmployeeInfo {
                 this.payPerHour,
                 this.basePay);
     }
+
+    public Long getId() {
+        return this.id;
+    }
 }
