@@ -7,4 +7,7 @@ public abstract class Employee {
 
     public abstract Money calculateSalary();
 
+    public String getName() {
+        return this.name;
+    }
 }

@@ -7,9 +7,8 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.hexagonal.salarysystem.application.port.in.CalculateSalaryCommand;
+import com.hexagonal.salarysystem.application.port.in.CalculateSalaryResult;
 import com.hexagonal.salarysystem.application.port.in.CalculateSalaryUseCase;
-import com.hexagonal.salarysystem.application.port.out.EmployeeInfo;
 import com.hexagonal.salarysystem.domain.Money;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -35,7 +34,7 @@ class CalculateSalaryControllerTest {
         BufferedReader mockBufferedReader = mock(BufferedReader.class);
         when(mockBufferedReader.readLine()).thenReturn("1", "15"); // 아이디, 소득세 퍼센트
         CalculateSalaryController.br = mockBufferedReader;
-        when(calculateSalaryUseCase.calculateSalary(any())).thenReturn(new Money(42500));
+        when(calculateSalaryUseCase.calculateSalary(any())).thenReturn(new CalculateSalaryResult("아무개씨", new Money(42500)));
 
         // 결과를 캡처하기 위한 ByteArrayOutputStream 생성
         ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
@@ -48,7 +47,7 @@ class CalculateSalaryControllerTest {
         verify(calculateSalaryUseCase, times(1)).calculateSalary(any());
 
         // 예상 출력 결과 (기본 급여 50000 * (1 - 0.15) = 42500)
-        String expectedOutput = "급여 계산 결과\n42500원\n";
+        String expectedOutput = "급여 계산 결과\n이름: 아무개씨, 급여: 42500원\n";
         assertTrue(outputStreamCaptor.toString().contains(expectedOutput));
     }
 

@@ -28,7 +28,7 @@ class CalculateSalaryServiceTest {
         when(loadEmployeeInfoPort.loadOrElseThrow(1L)).thenReturn(employeeInfo);
         CalculateSalaryCommand command = new CalculateSalaryCommand(1, 15);
 
-        Money result = calculateSalaryService.calculateSalary(command);
+        Money result = calculateSalaryService.calculateSalary(command).getMoney();
 
         Money expected = new Money(42500); // 50000 * (1 - 0.15) = 42500
         assertEquals(expected, result, "최종 결과가 기대한 값과 다릅니다.");
@@ -40,7 +40,7 @@ class CalculateSalaryServiceTest {
         when(loadEmployeeInfoPort.loadOrElseThrow(1L)).thenReturn(employeeInfo);
         CalculateSalaryCommand command = new CalculateSalaryCommand(1, 20);
 
-        Money result = calculateSalaryService.calculateSalary(command);
+        Money result = calculateSalaryService.calculateSalary(command).getMoney();
 
         Money expected = new Money(120); // 15 * 10 * (1 - 0.2) = 120
         assertEquals(expected, result, "최종 결과가 기대한 값과 다릅니다.");

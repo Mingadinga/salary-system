@@ -1,12 +1,12 @@
 package com.hexagonal.salarysystem.application;
 
 import com.hexagonal.salarysystem.application.port.in.CalculateSalaryCommand;
+import com.hexagonal.salarysystem.application.port.in.CalculateSalaryResult;
 import com.hexagonal.salarysystem.application.port.in.CalculateSalaryUseCase;
 import com.hexagonal.salarysystem.application.port.out.EmployeeFactory;
 import com.hexagonal.salarysystem.application.port.out.EmployeeInfo;
 import com.hexagonal.salarysystem.application.port.out.LoadEmployeeInfoPort;
 import com.hexagonal.salarysystem.domain.Employee;
-import com.hexagonal.salarysystem.domain.Money;
 
 public class CalculateSalaryService implements CalculateSalaryUseCase {
 
@@ -17,9 +17,9 @@ public class CalculateSalaryService implements CalculateSalaryUseCase {
     }
 
     @Override
-    public Money calculateSalary(CalculateSalaryCommand command) {
+    public CalculateSalaryResult calculateSalary(CalculateSalaryCommand command) {
         EmployeeInfo employeeInfo = loadEmployeeInfoPort.loadOrElseThrow(command.getEmployeeId());
         Employee employee = EmployeeFactory.create(employeeInfo, command.getRatio());
-        return employee.calculateSalary();
+        return new CalculateSalaryResult(employee.getName(), employee.calculateSalary());
     }
 }

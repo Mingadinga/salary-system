@@ -1,8 +1,8 @@
 package com.hexagonal.salarysystem.adapter.in.console;
 
 import com.hexagonal.salarysystem.application.port.in.CalculateSalaryCommand;
+import com.hexagonal.salarysystem.application.port.in.CalculateSalaryResult;
 import com.hexagonal.salarysystem.application.port.in.CalculateSalaryUseCase;
-import com.hexagonal.salarysystem.domain.Money;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,10 +24,11 @@ public class CalculateSalaryController {
         double percent = Double.parseDouble(br.readLine());
 
         CalculateSalaryCommand command = new CalculateSalaryCommand(employeeId, percent);
-        Money money = calculateSalaryUseCase.calculateSalary(command);
+        CalculateSalaryResult result = calculateSalaryUseCase.calculateSalary(command);
 
         System.out.println("급여 계산 결과");
-        System.out.println(money.getValue().toPlainString()+"원");
+        System.out.println("이름: " + result.getName() +
+                ", 급여: " + result.getMoney().getValue().toPlainString()+"원");
 
     }
 }
