@@ -25,7 +25,7 @@ class CalculateSalaryControllerTest {
     @BeforeEach
     void setUp() {
         calculateSalaryUseCase = mock(CalculateSalaryUseCase.class);
-        calculateSalaryController = new CalculateSalaryController(calculateSalaryUseCase);
+        calculateSalaryController = new CalculateSalaryController(calculateSalaryUseCase, br);
     }
 
     @Test

@@ -1,7 +1,6 @@
 package com.hexagonal.salarysystem;
 
-import com.hexagonal.salarysystem.adapter.in.console.CalculateSalaryController;
-import com.hexagonal.salarysystem.adapter.in.console.CalculateSalarySumController;
+import com.hexagonal.salarysystem.adapter.in.StartingPoint;
 import java.io.IOException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,13 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SalarySystemApplication {
 
-    private final CalculateSalaryController calculateSalaryController;
-    private final CalculateSalarySumController calculateSalarySumController;
+    private final StartingPoint startingPoint;
 
-    public SalarySystemApplication(CalculateSalaryController calculateSalaryController,
-                                   CalculateSalarySumController calculateSalarySumController) {
-        this.calculateSalaryController = calculateSalaryController;
-        this.calculateSalarySumController = calculateSalarySumController;
+    public SalarySystemApplication(StartingPoint startingPoint) {
+        this.startingPoint = startingPoint;
     }
 
     public static void main(String[] args) throws IOException {
@@ -23,8 +19,7 @@ public class SalarySystemApplication {
     }
 
     public void init() throws IOException {
-//        calculateSalaryController.calculateSalary();
-        calculateSalarySumController.calculateSalary();
+        startingPoint.start();
     }
 
 }

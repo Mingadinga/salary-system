@@ -5,15 +5,15 @@ import com.hexagonal.salarysystem.application.port.in.CalculateSalaryResult;
 import com.hexagonal.salarysystem.application.port.in.CalculateSalaryUseCase;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class CalculateSalaryController {
 
     private final CalculateSalaryUseCase calculateSalaryUseCase;
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private final BufferedReader br;
 
-    public CalculateSalaryController(CalculateSalaryUseCase calculateSalaryUseCase) {
+    public CalculateSalaryController(CalculateSalaryUseCase calculateSalaryUseCase, BufferedReader br) {
         this.calculateSalaryUseCase = calculateSalaryUseCase;
+        this.br = br;
     }
 
     public void calculateSalary() throws IOException {
