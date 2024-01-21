@@ -1,4 +1,4 @@
-package com.hexagonal.salarysystem.salary.domain;
+package com.hexagonal.salarysystem.domain;
 
 import java.math.RoundingMode;
 import org.junit.jupiter.api.Test;

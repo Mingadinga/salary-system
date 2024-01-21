@@ -1,4 +1,4 @@
-package com.hexagonal.salarysystem.salary.domain;
+package com.hexagonal.salarysystem.domain;
 
 import static org.junit.jupiter.api.Assertions.*;
 
