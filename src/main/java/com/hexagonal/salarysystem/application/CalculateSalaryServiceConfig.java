@@ -1,5 +1,6 @@
 package com.hexagonal.salarysystem.application;
 
+import com.hexagonal.salarysystem.application.port.in.CalculateSalarySumUseCase;
 import com.hexagonal.salarysystem.application.port.in.CalculateSalaryUseCase;
 import com.hexagonal.salarysystem.application.port.out.LoadEmployeeInfoPort;
 import org.springframework.context.annotation.Bean;
@@ -17,4 +18,10 @@ public class CalculateSalaryServiceConfig {
     public CalculateSalaryUseCase calculateSalaryUseCase() {
         return new CalculateSalaryService(loadEmployeeInfoPort);
     }
+
+    @Bean
+    public CalculateSalarySumUseCase calculateSalarySumUseCase() {
+        return new CalculateSalaryService(loadEmployeeInfoPort);
+    }
+
 }

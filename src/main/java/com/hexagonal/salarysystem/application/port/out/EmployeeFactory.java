@@ -26,4 +26,8 @@ public class EmployeeFactory {
             throw new IllegalArgumentException("존재하지 않는 직원 유형입니다. 현재값 : " + employeeInfo.getType());
         }
     }
+
+    public static Employee create(EmployeeInfo employeeInfo) {
+        return EmployeeFactory.create(employeeInfo, 0);
+    }
 }

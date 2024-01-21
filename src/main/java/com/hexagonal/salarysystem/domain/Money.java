@@ -37,6 +37,10 @@ public final class Money {
         return new Money(this.value.multiply(BigDecimal.valueOf(number)));
     }
 
+    public Money add(Money money2) {
+        return new Money(this.value.add(money2.value));
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -57,4 +61,6 @@ public final class Money {
     public BigDecimal getValue() {
         return value;
     }
+
+
 }

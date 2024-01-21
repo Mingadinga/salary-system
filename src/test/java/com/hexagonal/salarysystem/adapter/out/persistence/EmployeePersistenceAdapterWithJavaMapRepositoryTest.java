@@ -55,4 +55,5 @@ class EmployeePersistenceAdapterWithJavaMapRepositoryTest {
         // findEmployeeInfoById 메소드가 1번 호출되었는지 검증
         verify(employeeRepository, times(1)).findEmployeeInfoById(2L);
     }
+
 }

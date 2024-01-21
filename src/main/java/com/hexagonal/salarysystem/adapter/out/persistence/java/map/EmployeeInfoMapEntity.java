@@ -35,4 +35,12 @@ public class EmployeeInfoMapEntity implements ConvertableToEmployeeInfo {
     public Long getId() {
         return this.id;
     }
+
+    public String type() {
+        return this.type;
+    }
+
+    public String getName() {
+        return this.name;
+    }
 }
