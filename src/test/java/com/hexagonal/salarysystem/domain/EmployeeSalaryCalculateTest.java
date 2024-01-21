@@ -12,8 +12,8 @@ class EmployeeSalaryCalculateTest {
     void testCalculateSalaryForEmployeeList() {
         // Employee 리스트 생성
         List<Employee> employees = new ArrayList<>();
-        employees.add(new FullTimeEmployee(0.15, new Money(50000)));
-        employees.add(new PartTimeEmployee(0.2, new WorkDuration(10), new Money(15)));
+        employees.add(new FullTimeEmployee(1L, "정직원", 0.15, new Money(50000)));
+        employees.add(new PartTimeEmployee(1L, "아르바이트생", 0.2, new WorkDuration(10), new Money(15)));
 
         // Employee 리스트의 각 객체의 calculateSalary() 결과와 기대값이 일치하는지 확인
         Money expectedFullTimeSalary = new Money(42500); // 50000 * (1 - 0.15) = 42500

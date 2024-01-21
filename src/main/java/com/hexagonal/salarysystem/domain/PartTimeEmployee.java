@@ -5,7 +5,9 @@ public class PartTimeEmployee extends Employee {
     private WorkDuration workTime;
     private Money basePayOfTime;
 
-    public PartTimeEmployee(double taxRate, WorkDuration workTime, Money basePayOfTime) {
+    public PartTimeEmployee(Long id, String name, double taxRate, WorkDuration workTime, Money basePayOfTime) {
+        this.id = id;
+        this.name = name;
         this.taxRate = taxRate;
         this.workTime = workTime;
         this.basePayOfTime = basePayOfTime;

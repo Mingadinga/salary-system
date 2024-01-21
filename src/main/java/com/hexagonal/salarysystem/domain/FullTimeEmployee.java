@@ -5,7 +5,9 @@ public class FullTimeEmployee extends Employee {
     private double taxRate;
     private Money basePay;
 
-    public FullTimeEmployee(double taxRate, Money basePay) {
+    public FullTimeEmployee(Long id, String name, double taxRate, Money basePay) {
+        this.id = id;
+        this.name = name;
         this.taxRate = taxRate;
         this.basePay = basePay;
     }
