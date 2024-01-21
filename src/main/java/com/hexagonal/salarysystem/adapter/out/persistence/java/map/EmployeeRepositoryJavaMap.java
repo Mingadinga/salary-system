@@ -2,7 +2,6 @@ package com.hexagonal.salarysystem.adapter.out.persistence.java.map;
 
 import com.hexagonal.salarysystem.adapter.out.persistence.ConvertableToEmployeeInfo;
 import com.hexagonal.salarysystem.adapter.out.persistence.EmployeeRepository;
-import com.hexagonal.salarysystem.adapter.out.persistence.java.map.EmployeeInfoMapEntity;
 import java.util.Map;
 import java.util.Optional;
 

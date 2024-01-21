@@ -21,38 +21,14 @@ public class EmployeeInfoMapEntity implements ConvertableToEmployeeInfo {
         this.basePay = basePay;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public int getWorkHour() {
-        return workHour;
-    }
-
-    public long getPayPerHour() {
-        return payPerHour;
-    }
-
-    public long getBasePay() {
-        return basePay;
-    }
-
     @Override
     public EmployeeInfo mapToEmployeeInfo() {
         return new EmployeeInfo(
-                this.getId(),
-                this.getName(),
-                this.getType(),
-                this.getWorkHour(),
-                this.getPayPerHour(),
-                this.getBasePay());
+                this.id,
+                this.name,
+                this.type,
+                this.workHour,
+                this.payPerHour,
+                this.basePay);
     }
 }
